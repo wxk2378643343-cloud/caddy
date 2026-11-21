@@ -1,3 +1,34 @@
+# Caddy
+
+![Go](https://img.shields.io/badge/Go-2563EB?style=flat-square)
+![HTTP](https://img.shields.io/badge/HTTP-0F766E?style=flat-square)
+![TLS](https://img.shields.io/badge/TLS-334155?style=flat-square)
+![Caddyfile](https://img.shields.io/badge/Caddyfile-B45309?style=flat-square)
+
+## 📌 项目简介
+
+可扩展的 HTTP 服务和反向代理，支持自动 HTTPS、静态文件服务和模块化配置。
+
+## 🏗️ 系统架构
+
+- 核心负责加载和运行模块。HTTP 应用提供路由、代理和静态文件处理，TLS 应用管理证书及握手。
+- 配置可以直接使用原生 JSON，也可通过 Caddyfile 适配器转换后加载。
+
+## 📁 项目结构
+
+| 路径 | 用途 |
+| --- | --- |
+| [`cmd`](cmd) | 命令行入口 |
+| [`caddyconfig`](caddyconfig) | 配置加载与适配 |
+| [`modules/caddyhttp`](modules/caddyhttp) | HTTP 服务和处理中间件 |
+| [`modules/caddytls`](modules/caddytls) | TLS 与证书 |
+
+## 🚀 如何启动
+
+安装 Caddy 后，在静态文件目录运行 `caddy file-server --listen :8080`，再打开 `http://localhost:8080`。使用 Caddyfile、从源码构建或添加模块的步骤见下方上游文档。
+
+## 上游完整文档
+
 <p align="center">
 	<a href="https://caddyserver.com">
 		<picture>
